@@ -13,7 +13,9 @@ docker-compose up -d --build
 # Development
 
 You should add in hosts file
+
 **Windows**: C:\Windows\System32\drivers\etc\hosts
+
 **Linux**: /etc/hosts
 
 ```
