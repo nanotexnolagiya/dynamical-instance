@@ -2,11 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
-import App from './App';
-import './index.css';
+import AdminApp from './Admin/App';
+import HomeApp from './Home/App';
+import SupplierApp from './Admin/App';
+import CustomerApp from './Admin/App';
+
+const hosts = window.location.host.split('.')
+const subdomain = hosts.length > 2 ? hosts.slice(0, -2).join('.') : 'home'
+
+const instances = {
+  admin: <AdminApp />,
+  supplier: <SupplierApp />,
+  customer: <CustomerApp />,
+  home: <HomeApp />
+}
 
 ReactDOM.render(
-  <App />,
+  instances[subdomain],
   document.getElementById('root')
 );
 
